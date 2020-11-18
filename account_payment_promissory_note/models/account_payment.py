@@ -25,5 +25,10 @@ class AccountPayment(models.Model):
         super()._onchange_promissory_note()
         if not self.date_due and self.promissory_note:
             invoices = self.invoice_ids
-            if invoices:
+            partner = invoices[0].partner_id
+            same_partner = True
+            for invoice in invoices:
+                if invoice.partner_id != partner:
+                    same_partner = False
+            if invoices and same_partner:
                 self.date_due = max(invoices.mapped("invoice_date_due"))
