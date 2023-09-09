@@ -231,7 +231,7 @@
         <field name="view_mode">tree,form,pivot,graph</field>
         <field
             name="context"
-        >{'search_default_posted_moves': 1, 'search_default_payable': 1,'search_default_receivable': 1, 'search_default_not_full_reconciled': 1}</field>
+        >{'search_default_posted_moves': 1, 'search_default_payable': 1, 'search_default_receivable': 1, 'search_default_not_full_reconciled': 1}</field>
         <field
             name="view_ids"
             eval="[(5, 0, 0),
